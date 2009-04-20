@@ -15,7 +15,10 @@ class YaaclGenerator < Rails::Generator::NamedBase
       m.migration_template(
         'add_yaacl_fields.rb', 'db/migrate', :migration_file_name => "add_yaacl_fields"
       )      
-
+      m.directory File.join("app", "models")
+      m.file 'role_model.rb', 'app/models/role.rb'      
+      
+      m.file '../../../defaults/permissions.yml.default', 'config/permissions.yml'
     end
   end
 end
