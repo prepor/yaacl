@@ -6,6 +6,8 @@
       
   :admin:
     :actions:
+      - :posts_new
+      - :posts_create
       - :posts_edit
       - :posts_update
       - :posts_destroy

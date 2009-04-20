@@ -16,7 +16,8 @@ ActiveRecord::Base.establish_connection(config['test'])
 
 ::YAACLPerm = YAML::load(File.open(File.dirname(__FILE__) + '/../defaults/permissions.yml.default'))
 ::YAACLActions = []
-YAACLPerm.each_value { |roles| roles.each_value { |role| role[:actions].each {|action| YAACLActions << action unless YAACLActions.include?(action)} if role[:actions]}}
+
+YAACLPerm.each_value { |roles| roles.each_value { |role| role[:actions].each {|action| YAACLActions << action unless YAACLActions.include?(action)} if role && role[:actions]}}
 
 
 def rebuild_model

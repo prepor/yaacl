@@ -130,12 +130,12 @@ class UnitTest < Test::Unit::TestCase
       assert_contains @post.coauthors(true), @user
     end
     
-    should "permit create post" do
-      assert @user.permit?(:posts_create)
+    should "permit create blog" do
+      assert @user.permit?(:blogs_create)
     end
     
     should "not permit create blog" do
-      assert !@user.permit?(:blogs_create)
+      assert !@user.permit?(:blogs_destroy)
     end
     
     context "author and coauthor of post" do
