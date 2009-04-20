@@ -1,4 +1,4 @@
-class AddYaaclFeilds < ActiveRecord::Migration
+class AddYaaclFields < ActiveRecord::Migration
   def self.up
     add_column :<%= user_model.tableize %>, :global_roles_list, :string, :default => ''	
   	

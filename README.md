@@ -20,6 +20,7 @@ Models:
 
 	class Post < ActiveRecord::Base
 	  defend_this :parent => :blog, :roles => [:author, :coauthors]
+	  belongs_to :blog
 	end
 	
 	class Blog do
