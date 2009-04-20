@@ -17,9 +17,10 @@ module YAACL::Controller
   module InstanceMethods
     def check_permissions
       defend_controller_name = yaacl_options[:controller] ? yaacl_options[:controller] : controller_name
+      user_object = yaacl_options[:user_object] ? yaacl_options[:user_object] : 'current_user'
       entity = current_entity yaacl_options[:entities]
       is_defined_method = self.respond_to?(("defend_#{params[:action]}").to_sym)
-      access_denied unless ((is_defined_method && self.send(("defend_#{params[:action]}").to_sym)) || (!is_defined_method && current_user.permit?((defend_controller_name + '_' + params[:action]).to_sym, entity)))
+      access_denied unless ((is_defined_method && self.send(("defend_#{params[:action]}").to_sym)) || (!is_defined_method && self.send(user_object).permit?((defend_controller_name + '_' + params[:action]).to_sym, entity)))
     end  
     
     def current_entity(entities)

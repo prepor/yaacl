@@ -1,58 +1,46 @@
 :global:
   :user:
     :actions:
-      - :posts_new
-      - :posts_create
+      - :blogs_new
+      - :blogs_create
+      
   :admin:
     :actions:
       - :posts_edit
       - :posts_update
       - :posts_destroy
-      - :blogs_new
-      - :blogs_create
       - :blogs_edit
+      - :blogs_update
+      - :blogs_destroy
+
   :anonymous:
-    :title: 'Аноним'
+
       
 :blog:
   :founder: 
     :actions:
+      - :posts_new
+      - :posts_create
       - :posts_edit
       - :posts_update
-      - :posts_suggested
-      - :posts_declined
-      - :posts_approve
-      - :posts_decline
       - :posts_destroy
       - :blogs_edit
+      - :blogs_update
       - :blogs_destroy
   :contributor:
-    :title: 'Модератор блога'
     :actions:
+      - :posts_new
+      - :posts_create
       - :posts_edit
       - :posts_update
-      - :posts_suggested
-      - :posts_declined
-      - :posts_approve
-      - :posts_decline
 :post:
   :author:
-    :title: 'Автор поста'
     :actions:
       - :posts_edit
       - :posts_destroy
       - :posts_update
   :coauthor:
-    :title: 'Соавтор'
     :actions:
       - :posts_edit
       - :posts_update
-    
-  :translator:
-    :title: 'Переводчик'
-    
-  :proofreader:
-    :title: 'Редактор'
-    :actions:
-      - :posts_edit
-      - :posts_update
+
