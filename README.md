@@ -24,11 +24,11 @@ Models:
 	
 	class Blog do
     defend_this :roles => [:founder, :contributors]
-  end
+	end
 
 	class User
     include YAACL::User
-  end
+	end
 
 Controller:
 
